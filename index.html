@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="auto">
+  <head>
+    <script src="../assets/js/color-modes.js"></script>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta
+      name="author"
+      content="Mark Otto, Jacob Thornton, and Bootstrap contributors"
+    />
+    <meta name="generator" content="Hugo 0.118.2" />
+    <title>Oka Garbha Portofolio</title>
+
+    <link
+      rel="canonical"
+      href="https://getbootstrap.com/docs/5.3/examples/album/"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@docsearch/css@3"
+    />
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <style>
+      a {
+        text-decoration: none;
+      }
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, 0.1);
+        border: solid rgba(0, 0, 0, 0.15);
+        border-width: 1px 0;
+        box-shadow: inset 0 0.5em 1.5em rgba(0, 0, 0, 0.1),
+          inset 0 0.125em 0.5em rgba(0, 0, 0, 0.15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -0.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+
+      .bd-mode-toggle .dropdown-menu .active .bi {
+        display: block !important;
+      }
+    </style>
+  </head>
+  <body class="bg-dark">
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="check2" viewBox="0 0 16 16">
+        <path
+          d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"
+        />
+      </symbol>
+      <symbol id="circle-half" viewBox="0 0 16 16">
+        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
+      </symbol>
+      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+        <path
+          d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"
+        />
+        <path
+          d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"
+        />
+      </symbol>
+      <symbol id="sun-fill" viewBox="0 0 16 16">
+        <path
+          d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"
+        />
+      </symbol>
+    </svg>
+
+    <!-- NavBar -->
+    <div
+      class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle"
+    >
+      <button
+        class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
+        id="bd-theme"
+        type="button"
+        aria-expanded="false"
+        data-bs-toggle="dropdown"
+        aria-label="Toggle theme (auto)"
+      >
+        <svg class="bi my-1 theme-icon-active" width="1em" height="1em">
+          <use href="#circle-half"></use>
+        </svg>
+        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+      </button>
+      <ul
+        class="dropdown-menu dropdown-menu-end shadow"
+        aria-labelledby="bd-theme-text"
+      >
+        <li>
+          <button
+            type="button"
+            class="dropdown-item d-flex align-items-center"
+            data-bs-theme-value="light"
+            aria-pressed="false"
+          >
+            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em">
+              <use href="#sun-fill"></use>
+            </svg>
+            Light
+            <svg class="bi ms-auto d-none" width="1em" height="1em">
+              <use href="#check2"></use>
+            </svg>
+          </button>
+        </li>
+        <li>
+          <button
+            type="button"
+            class="dropdown-item d-flex align-items-center"
+            data-bs-theme-value="dark"
+            aria-pressed="false"
+          >
+            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em">
+              <use href="#moon-stars-fill"></use>
+            </svg>
+            Dark
+            <svg class="bi ms-auto d-none" width="1em" height="1em">
+              <use href="#check2"></use>
+            </svg>
+          </button>
+        </li>
+        <li>
+          <button
+            type="button"
+            class="dropdown-item d-flex align-items-center active"
+            data-bs-theme-value="auto"
+            aria-pressed="true"
+          >
+            <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em">
+              <use href="#circle-half"></use>
+            </svg>
+            Auto
+            <svg class="bi ms-auto d-none" width="1em" height="1em">
+              <use href="#check2"></use>
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+    <!-- EndNavBar -->
+
+    <!-- Navbar Open -->
+    <header data-bs-theme="dark">
+      <div class="collapse text-bg-dark" id="navbarHeader">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8 col-md-7 py-4">
+              <h4>About</h4>
+              <p class="text-body-secondary">
+                I am a 3rd grade junior high school student at SMP Negeri 1
+                Payangan. I am an expert in creating websites with simple to
+                medium complexity. I am also interested in Artificial
+                Intelligence.
+              </p>
+            </div>
+            <div class="col-sm-4 offset-md-1 py-4">
+              <h4>Contact</h4>
+              <ul class="list-unstyled">
+                <li>
+                  <button type="button" class="btn btn-light my-1">
+                    <a
+                      target="_blank"
+                      href="https://instagram.com/okagarbhapangestu"
+                      class="text-dark"
+                      ><i class="fa-brands fa-instagram"></i> Instagram</a
+                    >
+                  </button>
+                </li>
+                <li>
+                  <button type="button" class="btn btn-light my-1">
+                    <a
+                      target="_blank"
+                      href="https://facebook.com/Oka"
+                      class="text-dark"
+                      ><i class="fa-brands fa-facebook-f"></i> Facebook</a
+                    >
+                  </button>
+                </li>
+                <li>
+                  <button type="button" class="btn btn-light my-1">
+                    <a
+                      target="_blank"
+                      href="mailto:okagarbhapangestu1@gmail.com"
+                      class="text-dark"
+                      ><i class="fa-solid fa-envelope"></i> Email</a
+                    >
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container">
+          <a href="#" class="navbar-brand d-flex align-items-center">
+            <i class="fa-solid fa-headset"></i>
+            <path
+              d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"
+            />
+            <circle cx="12" cy="13" r="4" />
+            <strong>Oka Garbha</strong>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarHeader"
+            aria-controls="navbarHeader"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+    <!-- end Navbar Open -->
+
+    <!-- Content  -->
+    <main>
+      <!-- Jumbotron  -->
+      <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+          <div class="col-lg-6 col-md-8 mx-auto text-light text-start pt-5">
+            <h1 class="fw-light">Hello, I'm Frontend Web Developer</h1>
+            <p class="lead">
+              I build website applications frontend that are attractive and easy
+              to use.
+            </p>
+            <p>
+              <a href="#" class="btn btn-primary my-2">Contact Me</a>
+              <a href="#" class="btn btn-secondary my-2">Check My Portofolio</a>
+            </p>
+          </div>
+          <div class="col-lg-6 col-md-8 mx-auto text-light">
+            <img src="image/ilustration.png" class="img-fluid" alt="" />
+          </div>
+        </div>
+      </section>
+      <!-- End Jumbotron -->
+
+      <!-- Skills Sets -->
+      <section class="skillset py-3" style="background-color: rgb(50, 50, 50)">
+        <h2 class="text-uppercase text-light text-center">skillset</h2>
+        <div class="container d-flex flex-wrap">
+          <div
+            class="card mx-auto my-5"
+            style="
+              width: 14rem;
+              border-bottom-left-radius: 12px;
+              border-top-right-radius: 12px;
+              border-top-left-radius: 0px;
+              border-bottom-right-radius: 0px;
+            "
+          >
+            <div class="card-body d-flex">
+              <div class="col">
+                <i class="fa-solid fa-crown" style="font-size: 50px"></i>
+              </div>
+              <div class="col">
+                <h5 class="card-title">Design</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">UI/UX</h6>
+              </div>
+            </div>
+          </div>
+          <div
+            class="card mx-auto my-5"
+            style="
+              width: 14rem;
+              border-bottom-left-radius: 12px;
+              border-top-right-radius: 12px;
+              border-top-left-radius: 0px;
+              border-bottom-right-radius: 0px;
+            "
+          >
+            <div class="card-body d-flex">
+              <div class="col">
+                <i class="fa-brands fa-bootstrap" style="font-size: 50px"></i>
+              </div>
+              <div class="col">
+                <h5 class="card-title">Frontend</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">
+                  Bootstrap
+                </h6>
+              </div>
+            </div>
+          </div>
+          <div
+            class="card mx-auto my-5"
+            style="
+              width: 14rem;
+              border-bottom-left-radius: 12px;
+              border-top-right-radius: 12px;
+              border-top-left-radius: 0px;
+              border-bottom-right-radius: 0px;
+            "
+          >
+            <div class="card-body d-flex">
+              <div class="col">
+                <i class="fa-brands fa-node-js" style="font-size: 50px"></i>
+              </div>
+              <div class="col">
+                <h5 class="card-title">Backend</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">NodeJS</h6>
+              </div>
+            </div>
+          </div>
+          <div
+            class="card mx-auto my-5"
+            style="
+              width: 14rem;
+              border-bottom-left-radius: 12px;
+              border-top-right-radius: 12px;
+              border-top-left-radius: 0px;
+              border-bottom-right-radius: 0px;
+            "
+          >
+            <div class="card-body d-flex">
+              <div class="col">
+                <i class="fa-solid fa-cart-plus" style="font-size: 50px"></i>
+              </div>
+              <div class="col">
+                <h5 class="card-title">Specialize</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">
+                  System POS
+                </h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Skills Sets -->
+
+      <!-- List Portofolio -->
+
+      <section class="list-porto py-5">
+        <h2 class="text-light text-center mb-5 text-uppercase">
+          Daftar Portofolio
+        </h2>
+
+        <div class="d-flex p-2 container flex-wrap">
+          <div class="card mx-auto my-3" style="width: 18rem; border: none">
+            <img src="/image/porto1.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Portofolio 1</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <a href="/pages/detail.html" class="btn btn-primary"
+                >Go somewhere</a
+              >
+            </div>
+          </div>
+          <div class="card mx-auto my-3" style="width: 18rem; border: none">
+            <img src="/image/porto2.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Portofolio 2</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <a href="/pages/detail2.html" class="btn btn-primary"
+                >Go somewhere</a
+              >
+            </div>
+          </div>
+          <div class="card mx-auto my-3" style="width: 18rem; border: none">
+            <img src="/image/porto3.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Portofolio 3</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <a href="/pages/detail3.html" class="btn btn-primary"
+                >Go somewhere</a
+              >
+            </div>
+          </div>
+          <div class="card mx-auto my-3" style="width: 18rem; border: none">
+            <img src="/image/porto1.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Portofolio 4</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <a href="/pages/detail4.html" class="btn btn-primary"
+                >Go somewhere</a
+              >
+            </div>
+          </div>
+          <div class="card mx-auto my-3" style="width: 18rem; border: none">
+            <img src="/image/porto2.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Portofolio 5</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <a href="/pages/detail5.html" class="btn btn-primary"
+                >Go somewhere</a
+              >
+            </div>
+          </div>
+          <div class="card mx-auto my-3" style="width: 18rem; border: none">
+            <img src="/image/porto3.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Portofolio 6</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <a href="/pages/detail6.html" class="btn btn-primary"
+                >Go somewhere</a
+              >
+            </div>
+          </div>
+          <div class="card mx-auto my-3" style="width: 18rem; border: none">
+            <img src="/image/porto1.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Portofolio 7</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <a href="/pages/detail7.html" class="btn btn-primary"
+                >Go somewhere</a
+              >
+            </div>
+          </div>
+          <div class="card mx-auto my-3" style="width: 18rem; border: none">
+            <img src="/image/porto2.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Portofolio 8</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <a href="pages/detail8.html" class="btn btn-primary"
+                >Go somewhere</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- End List Portofolio -->
+
+      <!-- Testimony -->
+      <section class="testimony">
+        <h2 class="text-light text-center text-uppercase mb-3">Testimony</h2>
+
+        <div id="carouselExampleIndicators" class="carousel slide">
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active pt-5 pb-5">
+              <div class="card mx-auto" style="width: 20rem">
+                <img
+                  src="/image/img.jpg"
+                  style="
+                    width: 120px;
+                    height: 120px;
+                    border-radius: 100px;
+                    margin-top: -45px;
+                  "
+                  class="fit-content mx-auto"
+                  alt="..."
+                />
+                <div class="text-center p-4">
+                  <h3>Oka Garbha</h3>
+                  <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Laudantium nisi ipsum minus neque culpa fugit dolor est
+                    facere dicta voluptas!
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item pt-5 pb-5">
+              <div class="card mx-auto" style="width: 20rem">
+                <img
+                  src="/image/img.jpg"
+                  style="
+                    width: 120px;
+                    height: 120px;
+                    border-radius: 100px;
+                    margin-top: -45px;
+                  "
+                  class="fit-content mx-auto"
+                  alt="..."
+                />
+                <div class="text-center">
+                  <h3>John Wick</h3>
+                  <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Laudantium nisi ipsum minus neque culpa fugit dolor est
+                    facere dicta voluptas!
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item pt-5 pb-5">
+              <div class="card mx-auto" style="width: 20rem">
+                <img
+                  src="/image/img.jpg"
+                  style="
+                    width: 120px;
+                    height: 120px;
+                    border-radius: 100px;
+                    margin-top: -45px;
+                  "
+                  class="fit-content mx-auto"
+                  alt="..."
+                />
+                <div class="text-center">
+                  <h3>Rick Astley</h3>
+                  <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                    Laudantium nisi ipsum minus neque culpa fugit dolor est
+                    facere dicta voluptas!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </section>
+      <!-- End Testimony -->
+
+      <!-- Our Brand Client -->
+      <section class="brand-client mt-4">
+        <h2 class="text-light text-uppercase text-center">Our Client</h2>
+        <div
+          class="d-flex p-2 container flex-wrap justify-content-between mt-4"
+        >
+          <div
+            class="card shadow-lg mb-5 bg-body-tertiary rounded"
+            style="
+              height: 100px;
+              width: 250px;
+              text-align: center;
+              padding-top: 30px;
+              background-color: rgb(214, 214, 214);
+              font-weight: bolder;
+              font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+                sans-serif;
+              font-size: 24px;
+            "
+          >
+            Google
+          </div>
+          <div
+            class="card shadow-lg mb-5 bg-body-tertiary rounded"
+            style="
+              height: 100px;
+              width: 250px;
+              text-align: center;
+              padding-top: 30px;
+              background-color: rgb(214, 214, 214);
+              font-weight: bolder;
+              font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+                sans-serif;
+              font-size: 24px;
+            "
+          >
+            YouTube
+          </div>
+          <div
+            class="card shadow-lg mb-5 bg-body-tertiary rounded"
+            style="
+              height: 100px;
+              width: 250px;
+              text-align: center;
+              padding-top: 30px;
+              background-color: rgb(214, 214, 214);
+              font-weight: bolder;
+              font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+                sans-serif;
+              font-size: 24px;
+            "
+          >
+            SlabGames
+          </div>
+          <div
+            class="card shadow-lg mb-5 bg-body-tertiary rounded"
+            style="
+              height: 100px;
+              width: 250px;
+              text-align: center;
+              padding-top: 30px;
+              background-color: rgb(214, 214, 214);
+              font-weight: bolder;
+              font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+                sans-serif;
+              font-size: 24px;
+            "
+          >
+            EpicGames
+          </div>
+        </div>
+      </section>
+
+      <!-- Quantity Satisfaction -->
+      <section class="quantity-section container">
+        <h2 class="text-light text-uppercase text-center">
+          Quantity Satisfaction
+        </h2>
+        <p class="text-light">Tidak Puas</p>
+        <div
+          class="progress mt-3"
+          role="progressbar"
+          aria-label="Success example"
+          aria-valuenow="25"
+          aria-valuemin="0"
+          aria-valuemax="100"
+        >
+          <div class="progress-bar bg-success" style="width: 5%">5%</div>
+        </div>
+        <p class="text-light">Cukup Puas</p>
+        <div
+          class="progress mt-3"
+          role="progressbar"
+          aria-label="Info example"
+          aria-valuenow="50"
+          aria-valuemin="0"
+          aria-valuemax="100"
+        >
+          <div class="progress-bar bg-info text-dark" style="width: 15%">
+            15%
+          </div>
+        </div>
+        <p class="text-light">Puas</p>
+        <div
+          class="progress mt-3"
+          role="progressbar"
+          aria-label="Warning example"
+          aria-valuenow="75"
+          aria-valuemin="0"
+          aria-valuemax="100"
+        >
+          <div class="progress-bar bg-warning text-dark" style="width: 20%">
+            20%
+          </div>
+        </div>
+        <p class="text-light">Sangat Puas</p>
+        <div
+          class="progress mt-3"
+          role="progressbar"
+          aria-label="Danger example"
+          aria-valuenow="100"
+          aria-valuemin="0"
+          aria-valuemax="100"
+        >
+          <div class="progress-bar bg-danger" style="width: 60%">60%</div>
+        </div>
+      </section>
+      <!-- End Quantity -->
+      <section class="contact-form container mt-4">
+        <div class="row">
+          <div class="col p-5">
+            <h2 class="text-light">Get In Touch</h2>
+            <form class="text-light">
+              <div class="mb-3">
+                <label for="nama" class="form-label">Nama</label>
+                <input type="text" class="form-control" id="nama" />
+              </div>
+              <div class="mb-3">
+                <label for="message">Pesan</label>
+                <textarea
+                  class="form-control"
+                  name=""
+                  id="message"
+                  rows="6"
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+          <div class="col">
+            <div class="card p-5">
+              <h2>Contact Us</h2>
+              <p>
+                <span
+                  ><i
+                    class="fa-solid fa-map-location-dot m-3"
+                    style="color: #ff0000"
+                  ></i
+                ></span>
+                <b>Address:</b> Jln. Kesatrian, No. 08, Gianyar - Bali
+              </p>
+              <p>
+                <span>
+                  <i class="fa-solid fa-mobile m-3" style="color: #000000"></i
+                ></span>
+                <b>Phone:</b> 0881-0377-5347
+              </p>
+              <p>
+                <span>
+                  <i
+                    class="fa-regular fa-envelope m-3"
+                    style="color: #74c0fc"
+                  ></i>
+                </span>
+                <b>Email:</b> bluxfusion@gmail.com
+              </p>
+              <p>
+                <span>
+                  <i
+                    class="fa-brands fa-webflow m-3"
+                    style="color: #ffd43b"
+                  ></i> </span
+                ><b>Website:</b> irvanpratama.github.io
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- End Content -->
+
+    <footer class="container text-body-secondary py-5">
+      <div class="container">
+        <button type="button" class="btn btn-light float-end">
+          <p class="float-end mb-1">
+            <a href="#"
+              ><i class="fa-solid fa-arrow-up a-2xl text-body-secondary"></i
+            ></a>
+          </p>
+        </button>
+      </div>
+
+      <div class="text-center mx-auto">
+        <p class="mb-1 text-light">
+          All right reserved &copy;<a
+            target="_blank"
+            href="https://instagram.com/okagarbhapangestu"
+            >OkaGarbha</a
+          >
+        </p>
+      </div>
+    </footer>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/a47e9470dd.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
